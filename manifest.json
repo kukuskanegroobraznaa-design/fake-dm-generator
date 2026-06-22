@@ -1,0 +1,7 @@
+{
+    "name": "Fake DM Generator",
+    "version": "1.0.0",
+    "description": "Generate fake Discord DM messages for screenshots",
+    "author": "kettu",
+    "main": "index.html"
+  }
