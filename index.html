@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><title>Fake DM Generator</title>
+<style>
+body { font-family: Arial; background: #313338; color: #dbdee1; padding: 20px; }
+.container { max-width: 600px; margin: auto; background: #1e1f22; padding: 20px; border-radius: 12px; }
+input, textarea { width: 100%; padding: 10px; margin: 8px 0; background: #383a40; border: none; border-radius: 6px; color: #dbdee1; }
+button { background: #5865f2; color: white; padding: 12px; border: none; border-radius: 6px; cursor: pointer; width: 100%; }
+.message { background: #2b2d31; padding: 12px; border-radius: 8px; margin-top: 12px; border-left: 4px solid #5865f2; }
+.author { font-weight: bold; color: #dee0fc; }
+.timestamp { font-size: 11px; color: #949ba4; margin-left: 10px; }
+.content { margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Fake DM Message Creator</h2>
+<input id="author" placeholder="Author name" value="FakeUser">
+<input id="timestamp" placeholder="Timestamp" value="Today at 12:34">
+<textarea id="content" rows="3" placeholder="Message content">This is a fake DM.</textarea>
+<button onclick="generate()">Generate Message</button>
+<div id="output"></div>
+</div>
+<script>
+function generate() {
+  const author = document.getElementById('author').value || 'Unknown';
+  const timestamp = document.getElementById('timestamp').value || 'Just now';
+  const content = document.getElementById('content').value || '(empty)';
+  document.getElementById('output').innerHTML = `
+    <div class="message">
+      <div><span class="author">${author}</span> <span class="timestamp">${timestamp}</span></div>
+      <div class="content">${content}</div>
+    </div>
+    <p style="font-size:12px; color:#949ba4; margin-top:8px;">Screenshot this for a fake DM.</p>
+  `;
+}
+window.onload = generate;
+</script>
+</body>
+</html>
